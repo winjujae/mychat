@@ -1,4 +1,4 @@
-# AI Chat — 멀티모달 채팅 서비스
+# AI Chat
 
 **Gemini · Claude · 로컬(Ollama)**
 멀티 프로바이더로 자연어 + 이미지 대화를 지원하며, FastAPI 서버 + 자체 프론트엔드로 구성됩니다.
