@@ -1,6 +1,6 @@
 # AI Chat — 멀티모달 채팅 서비스
 
-ChatGPT / Claude 스타일의 완성도 높은 채팅 웹앱입니다. **Gemini · Claude · 로컬(Ollama)**
+**Gemini · Claude · 로컬(Ollama)**
 멀티 프로바이더로 자연어 + 이미지 대화를 지원하며, FastAPI 서버 + 자체 프론트엔드로 구성됩니다.
 키가 설정되거나 서버가 켜진 프로바이더만 모델 드롭다운에 자동 노출됩니다.
 
