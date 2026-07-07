@@ -1,0 +1,26 @@
+# --- 비밀 / 환경변수 ---
+.env
+.env.*
+!.env.example
+
+# --- 런타임 데이터 (개인 대화 기록 / 업로드 파일) ---
+data/
+uploads/
+*.db
+
+# --- Claude Code 로컬 설정 ---
+.claude/
+
+# --- Gradio 레거시 산출물 ---
+.gradio/
+
+# --- 파이썬 캐시 / 가상환경 ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# --- 모델 가중치 ---
+*.pt
+*.pth

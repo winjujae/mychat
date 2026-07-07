@@ -1,0 +1,21 @@
+# 다른 컴퓨터에서도 `docker compose up -d` 한 번으로 실행.
+# 사전 준비: 같은 폴더에 .env 파일 (.env.example 복사 후 키 입력)
+services:
+  app:
+    build: .
+    image: ai-chat:latest
+    container_name: ai-chat
+    ports:
+      - "8000:8000"          # 호스트 8000 → 컨테이너 8000. 브라우저: http://localhost:8000
+    env_file:
+      - .env                 # GEMINI_API_KEY / ANTHROPIC_API_KEY 주입
+    environment:
+      # 컨테이너 안의 localhost 는 호스트가 아니므로, 호스트에 설치한 Ollama 접근용 주소로 덮어씀.
+      # Ollama 미설치면 그냥 무시됨(모델 목록에 안 뜸). 나중에 호스트에서 Ollama 켜면 자동 연결.
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"   # Linux 호스트에서도 host.docker.internal 해석되게
+    volumes:
+      - ./data:/app/data       # 대화 DB(chat.db) 영속화
+      - ./uploads:/app/uploads # 업로드 이미지 영속화
+    restart: unless-stopped

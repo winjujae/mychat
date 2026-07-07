@@ -1,0 +1,11 @@
+# AI Chat 웹앱(main.py) 실행에 필요한 패키지
+fastapi
+uvicorn[standard]
+google-genai      # Gemini
+anthropic         # Claude (선택: ANTHROPIC_API_KEY 있을 때만 사용)
+httpx             # 로컬 Ollama 호출용
+pillow
+python-dotenv
+
+# 참고: 레거시 Gradio 데모(app.py)를 돌리려면 별도로 `pip install gradio` 하세요.
+#       새 웹앱(main.py)에는 필요 없습니다.
